@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
   },
-  productTitle: {},
+  productTitle: {
+    fontFamily: "LibreFranklin-Italic",
+  },
   productImage: {
     width: 40,
     height: 40,

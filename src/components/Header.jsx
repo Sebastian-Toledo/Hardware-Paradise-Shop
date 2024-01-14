@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
   },
   headerTitle: {
-    color: "#fff",
+    color: colors.white,
     fontFamily: "LibreFranklin-Bold",
   },
 });

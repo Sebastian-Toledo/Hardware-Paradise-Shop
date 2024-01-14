@@ -1,5 +1,6 @@
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import Card from "./Card";
+import { colors } from "../global/colors";
 
 const CategoryItem = ({ category, onSelectCategoryEvent }) => {
   return (
@@ -15,11 +16,12 @@ export default CategoryItem;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     padding: 20,
     margin: 10,
   },
   text: {
+    fontFamily: "LibreFranklin-Italic",
     textTransform: "capitalize",
     fontSize: 15,
   },

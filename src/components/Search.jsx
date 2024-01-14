@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: "80%",
+    fontFamily: "LibreFranklin-Italic",
   },
 });
