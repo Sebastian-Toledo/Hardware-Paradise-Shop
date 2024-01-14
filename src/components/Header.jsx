@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: "#fff",
+    fontFamily: "LibreFranklin-Bold",
   },
 });

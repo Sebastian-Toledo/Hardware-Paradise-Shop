@@ -1,10 +1,40 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import products_data from "../data/products_data.json";
+import ProductItem from "../components/ProductItem";
+import Header from "../components/Header";
+import { useState, useEffect } from "react";
+import Search from "../components/Search";
 
-const ProductsByCategoryScreen = () => {
+const ProductsByCategoryScreen = ({ category }) => {
+  const [productsByCategory, setProductsByCategory] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const productsFilteredByCategory = products_data.filter(
+      (product) => product.category === category
+    );
+    const productsFiltered = productsFilteredByCategory.filter((product) =>
+      product.title.toLowerCase().includes(search.toLowerCase())
+    );
+    setProductsByCategory(productsFiltered);
+  }, [category, search]);
+
+  const renderProductItem = ({ item }) => <ProductItem product={item} />;
+
+  const onSeach = (search) => {
+    setSearch(search);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Productos por categoría</Text>
-    </View>
+    <>
+      <Header title="Productos" />
+      <Search onSearchHandlerEvent={onSeach} />
+      <FlatList
+        data={productsByCategory}
+        renderItem={renderProductItem}
+        keyExtractor={(item) => item.id}
+      />
+    </>
   );
 };
 
